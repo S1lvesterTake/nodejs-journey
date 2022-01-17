@@ -15,13 +15,15 @@ afterEach(async()=>{
   await browser.close();
 })
 
-test('Add two number', () => {
-  const sum = 1 + 2;
-
-  expect(sum).toEqual(3);
-});
-
-test('We can lounch a browser', async () => {
+test('The header has the correct test', async () => {
   const text = await page.$eval('a.brand-logo', (el) => el.innerHTML);
   expect(text).toEqual('Blogster');
 });
+
+test('Clicking login start  oauth flow', async () =>{
+  await page.click('.right a');
+
+  const url  = await page.url()
+
+  console.log(url);
+})
