@@ -12,7 +12,7 @@ jobs:
       - checkout
       - node/install-packages
       - run: npm run build
-      - run: npm run test
+      # - run: npm run test
 
 workflows:
   sample:
