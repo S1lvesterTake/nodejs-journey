@@ -8,7 +8,5 @@ jobs:
       tag: '10.4'
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
+      - node/install-packages
       - run: npm run test
