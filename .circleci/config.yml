@@ -2,11 +2,15 @@ version: 2.1
 orbs:
   node: circleci/node@4.7.0
 jobs:
-  build:
-    executor:
-      name: node/default
-      tag: '10.4'
-    steps:
+  test:
+     docker:
+      - image: cimg/node:15.1
+     steps:
       - checkout
       - node/install-packages
       - run: npm run test
+
+workflows:
+  sample:
+    jobs:
+      - test
